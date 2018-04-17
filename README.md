@@ -203,7 +203,7 @@ iteration. Again for a multi-class problem the loss function would need to be ch
     model.compile(optimizer=adam, loss='binary_crossentropy', metrics=['accuracy'])
 ```
 
-See [Featureless Deep Learning Malicious URL Detection notebook](FeaturelessDeepLearningMaliciousURLClassification.ipynb):
+See [ Malicious URL Detection notebook](DL-Malicious-URL.ipynb):
 
 1. **Simple LSTM**
 
