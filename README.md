@@ -116,11 +116,8 @@ Interesting relationships of characters that tend to appear in similar contexts 
 
 <img src="img/embedded_word2vec_invincea.png" width="400">
 
-Source: Check out this fantastic blog on Featureless Deep Learning for URL Classification: [look-ma-no-features-deep-learning-methods-in-intrusion-detection](https://www.invincea.com/2017/02/look-ma-no-features-deep-learning-methods-in-intrusion-detection/).
 
-I already mentioned that ```word2vec``` is trained first, then applied to each URL to "embed"/transform
-the URL and thus derive it's "features", so that the actual
-binary classifier (deep neural network) can be trained thereafter. Every single
+I already mentioned that ```word2vec``` is trained first, then applied to each URL to "embed"/transform the URL and thus derive it's "features", so that the actual binary classifier (deep neural network) can be trained thereafter. Every single
 embedded URL is of shape:
 
 <img src="img/URL_word2vec_transformed.png" width="280">
