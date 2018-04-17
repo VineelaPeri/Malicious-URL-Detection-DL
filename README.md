@@ -4,7 +4,7 @@ Lakshmi Peri
 
 ### Code
 
-Go right away to the notebook that contains the code: [Deep Learning Malicious URL Detection notebook](DeepLearningMaliciousURLClassification.ipynb)
+Go right away to the notebook that contains the code: [Deep Learning Malicious URL Detection notebook](DL-Malicious-URL.ipynb)
 
 ### Table of content
 
