@@ -18,6 +18,7 @@ Go right away to the notebook that contains the code: [Deep Learning Malicious U
 - [Deep Learning Architectures in Keras](#deep-learning-architectures-in-keras)
 - [Training and Evaluation](#training-and-evaluation)
 - [Save models to Disk](#save-models-to-disk)
+- [Metrics](#metrics)
 - [Making a new Prediction](#making-a-new-prediction)
 - [Conclusion](#conclusion)
 
@@ -358,14 +359,8 @@ def load_model(fileModelJSON,fileWeights):
     return model
 ```
 
-For example, save the 1D Convolution + LSTM model to disk and load it later to make new predictions.
-
-```python
-model_name = "deeplearning_1DConvLSTM"
-save_model(DATA_HOME + model_name + ".json", DATA_HOME + model_name + ".h5")
-model = load_model(DATA_HOME + model_name + ".json", DATA_HOME + model_name + ".h5")
-```
-
+Metrics
+----------
 
 Making a New Prediction
 -----------------------
@@ -375,8 +370,8 @@ In contrast to more traditional Machine Learning, where preprocessing and/or fet
 1. Convert raw URL string in list of lists where characters that are contained in "printable" are stored encoded as integer.
 
 ```python
-test_url_mal = "naureen.net/etisalat.ae/index2.php"
-test_url_benign = "sixt.com/php/reservation?language=en_US"
+test_url_mal = 
+test_url_benign = 
 
 url = test_url_benign
 url_int_tokens = [[printable.index(x) + 1 for x in url if x in printable]]
