@@ -1,10 +1,10 @@
-# Featureless Deep Learning for Detection of Malicious URLs
+# Deep Learning for Detection of Malicious URLs
 
-Melissa K (Dec 2017)
+Lakshmi Peri
 
 ### Code
 
-Go right away to the notebook that contains the code: [Featureless Deep Learning Malicious URL Detection notebook](FeaturelessDeepLearningMaliciousURLClassification.ipynb)
+Go right away to the notebook that contains the code: [Deep Learning Malicious URL Detection notebook](DeepLearningMaliciousURLClassification.ipynb)
 
 ### Table of content
 
@@ -60,19 +60,6 @@ Data Collection
 ---------------
 
 The dataset (containing both malicious and benign URLs to train the Deep Learning binary classifier) was custom build from various open source data sources.
-Some of the open source URLs came with the zone apex only, others didn't include the protocol, therefore, we uniformly removed the protocol (http:// or https://) and the subdomain (e.g. www) from the URL string if applicable.
-
-Benign
-
-- Custom automated webscraping of [Alexa Top 1M](https://blog.majestic.com/development/majestic-million-csv-daily/) with recursive depth of scraping of level 1.
-
-Malicious
-
-- Various blacklists
-- [openphish](https://openphish.com/)
-- [phishtank](https://www.phishtank.com/)
-- [public GitHub faizann24](https://github.com/faizann24/Using-machine-learning-to-detect-malicious-URLs)
-- some more sources
 
 The dataset is balanced (50% benign and 50% malicious) and contains 194798 URLs in total. Note that for training better Deep Learning classifiers much more data is needed.
 In addition, the data may be a poor representation of the real world due to how the data was collected (e.g. only open source data were used instead of buying qualitative better and more recent data).
@@ -246,41 +233,7 @@ def simple_lstm(max_len=75, emb_dim=32, max_vocab_len=100, lstm_output_size=32, 
 
 ```
 
-2. **1D Convolution and LSTM**
-
-```python
-def lstm_conv(max_len=75, emb_dim=32, max_vocab_len=100, lstm_output_size=32, W_reg=regularizers.l2(1e-4)):
-    # Input
-    main_input = Input(shape=(max_len,), dtype='int32', name='main_input')
-    # Embedding layer
-    emb = Embedding(input_dim=max_vocab_len, output_dim=emb_dim, input_length=max_len,
-                W_regularizer=W_reg)(main_input) 
-    emb = Dropout(0.25)(emb)
-
-    # Conv layer
-    conv = Convolution1D(kernel_size=5, filters=256, \
-                     border_mode='same')(emb)
-    conv = ELU()(conv)
-
-    conv = MaxPooling1D(pool_size=4)(conv)
-    conv = Dropout(0.5)(conv)
-
-    # LSTM layer
-    lstm = LSTM(lstm_output_size)(conv)
-    lstm = Dropout(0.5)(lstm)
-    
-    # Output layer (last fully connected layer)
-    output = Dense(1, activation='sigmoid', name='output')(lstm)
-
-    # Compile model and define optimizer
-    model = Model(input=[main_input], output=[output])
-    adam = Adam(lr=1e-4, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
-    model.compile(optimizer=adam, loss='binary_crossentropy', metrics=['accuracy'])
-    return model
-
-```
-
-3. **1D Convolutions and Fully Connected Layers**
+2. **1D Convolutions and Fully Connected Layers**
 
 ```python
 def conv_fully(max_len=75, emb_dim=32, max_vocab_len=100, W_reg=regularizers.l2(1e-4)):
@@ -338,7 +291,6 @@ def conv_fully(max_len=75, emb_dim=32, max_vocab_len=100, W_reg=regularizers.l2(
 
 
 ```
-
 
 Training and Evaluation
 -----------------------
