@@ -11,6 +11,7 @@ Go right away to the notebook that contains the code: [Deep Learning Malicious U
 - [Motivation](#motivation)
 - [Deep Learning Terminology](#deep-learning-terminology)
 - [Data Collection](#data-collection)
+- [Pre-Requisites](#pre-requisites)
 - [Preprocessing Raw URLs](#preprocessing-raw-urls)
 - [Word2vec Embedding](#word2vec-embedding)
 - [Input and Output Layers of Neural Networks](#input-and-output-layers-of-neural-networks)
@@ -65,6 +66,9 @@ The dataset (containing both malicious and benign URLs to train the Deep Learnin
 The dataset is balanced (50% benign and 50% malicious) and contains 194798 URLs in total. Note that for training better Deep Learning classifiers much more data is needed.
 In addition, the data may be a poor representation of the real world due to how the data was collected (e.g. only open source data were used instead of buying qualitative better and more recent data).
 Malicious URLs tend to change over time, therefore, a continuous re-training on more current and representative data will be necessary for a production level quality.
+
+Pre-requistes
+---------------
 
 Preprocessing Raw URLs
 ----------------------
