@@ -95,8 +95,7 @@ print([printable.index(x)+1 for x in test_url if x in printable])
 
 <img src="img/preprocess_raw_URL.png" width="400">
 
-One ingredient is still missing: All URLs have to be of the same length. This results in cropping or padding with zeros.
-I choose a max length of 75 characters.
+All URLs have to be of the same length. This results in cropping or padding with zeros.I choose a max length of 100 characters.
 
 ```python
 # using keras library
@@ -143,16 +142,16 @@ iteration in the training process. "None" is a Keras placeholder for the batch s
 Input and Output Layers of Neural Networks
 ------------------------------------------
 
-Before moving on to some more fancy methods to further model the embedded 2D word2vec feature matrix, I would like to show what the input and output layers usually look like in [Keras](https://keras.io/).
+I would like to show what the input and output layers usually look like in [Keras](https://keras.io/).
 
-The very first initial layer is always an input layer where you define the initial input shape (here initial 75 characters of the URL)
+The very first initial layer is always an input layer where you define the initial input shape (here initial 100 characters of the URL)
 
 ```python
 # Input
  main_input = Input(shape=(max_len,), dtype='int32', name='main_input')
 ```
 
-Next is the word2vec layer (see above), that builds upon the main input layer
+Next is the Embedding layer (see above), that builds upon the main input layer
 
 ```python
 # Embedding layer
