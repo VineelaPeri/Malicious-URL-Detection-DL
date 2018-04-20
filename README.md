@@ -62,18 +62,21 @@ Data Collection
 ---------------
 
 The dataset (containing both malicious and benign URLs to train the Deep Learning binary classifier) was custom build from various open source data sources.
-
-The dataset is balanced (50% benign and 50% malicious) and contains 194798 URLs in total. Note that for training better Deep Learning classifiers much more data is needed.
-In addition, the data may be a poor representation of the real world due to how the data was collected (e.g. only open source data were used instead of buying qualitative better and more recent data).
 Malicious URLs tend to change over time, therefore, a continuous re-training on more current and representative data will be necessary for a production level quality.
 
-Pre-requistes
+Pre-requisites
 ---------------
+Numpy
+Keras
+Pandas
+Scikit Learn
+Tensorflow
+Utils
+Matplotlib
 
 Preprocessing Raw URLs
 ----------------------
-
-For the Featureless Deep Learning approach, no hand-crafted features nor API queries (such as ```whois``` database) are needed.
+For the  Deep Learning approach, no hand-crafted features nor API queries are needed.
 However, limited pre-processing of the raw URLs is still necessary. The raw URL string needs to be
 split into "words". Very easily done, every single character can be considered a "word". In addition, each
 character has to be expressed as unique integer. This requires building a dictionary first. A short cut
