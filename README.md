@@ -67,11 +67,17 @@ Malicious URLs tend to change over time, therefore, a continuous re-training on 
 Pre-requisites
 ---------------
 Numpy
-Keras
-Pandas
-Scikit Learn
-Tensorflow
+
+Keras.
+
+Pandas.
+
+Scikit Learn.
+
+Tensorflow.
+
 Utils
+
 Matplotlib
 
 Preprocessing Raw URLs
