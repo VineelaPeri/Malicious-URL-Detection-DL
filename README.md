@@ -22,6 +22,7 @@ Go right away to the notebook that contains the code: [Deep Learning Malicious U
 - [Metrics](#metrics)
 - [Making a new Prediction](#making-a-new-prediction)
 - [Conclusion](#conclusion)
+- [References](#reference)
 
 
 Motivation
@@ -415,5 +416,21 @@ What I like about the Deep Learning approach for URL classification is that it d
 domain knowledge. Training time is definitely longer and accuracy not necessarily better when compared
 to more traditional Machine Learning, however it may generalize better to
 tomorrow's malicious URLs.
+
+References
+----------
+Malicious URL Detection using Machine Learning
+   	https://arxiv.org/pdf/1701.07179.pdf
+
+Using Machine Learning to Detect Malicious URLs
+    https://www.kdnuggets.com/2016/10/machine-learning-detect-malicious-urls.html
+
+Learning a URL Representation with Deep Learning for Malicious URL Detection.
+    https://arxiv.org/pdf/1802.03162.pdf
+    
+Expose A Character-Level Convolutional Neural Network with Embedding For Detecting Malicious URLs
+    https://arxiv.org/pdf/1702.08568.pdf
+
+
 
 
